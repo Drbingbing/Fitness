@@ -16,7 +16,7 @@ struct ParallaxView<Content: View>: View {
     }
     
     var body: some View {
-        let height: CGFloat = 450
+        let height: CGFloat = 350
         GeometryReader { geo in
             let minY = geo.frame(in: .named("scroll")).minY
             let stretch = max(0, minY)
@@ -38,6 +38,6 @@ struct ParallaxView<Content: View>: View {
                     : -minY * 0.45
                 )
         }
-        .frame(height: 450)
+        .frame(height: height)
     }
 }
