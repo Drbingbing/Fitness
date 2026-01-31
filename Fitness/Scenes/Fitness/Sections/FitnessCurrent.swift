@@ -14,6 +14,7 @@ struct FitnessCurrentView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             FitnessCurrentPreview()
+                .navigate(to: CurrentProgramView())
             FitnessCurrentSummaryView()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -37,6 +38,7 @@ private struct FitnessCurrentPreview: View {
                 HStack {
                     Text("5/3/1")
                         .font(.title.bold())
+                        .foregroundStyle(theme.label.primary)
                     Image(systemName: "chevron.right")
                         .foregroundStyle(theme.label.tertiary)
                         .font(.body.bold())

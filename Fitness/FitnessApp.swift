@@ -14,6 +14,7 @@ struct FitnessApp: App {
     var body: some Scene {
         WindowGroup {
             MainWindow()
+                .environmentObject(appState)
         }
     }
 }

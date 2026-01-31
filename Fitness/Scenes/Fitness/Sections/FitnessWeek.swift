@@ -29,7 +29,6 @@ private struct FitnessWeekPlansView: View {
     @Environment(\.presentationData) var presentationData
     
     var body: some View {
-        let theme = presentationData.theme
         LazyVGrid(columns: [GridItem(), GridItem()]) {
             WeekPlan()
             WeekPlan()

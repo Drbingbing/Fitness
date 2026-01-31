@@ -25,23 +25,27 @@ struct PresentationTheme: Equatable {
     
     let appColor: Color
     let label: PresentationThemeLabel
+    let colors: PresentationThemeColors
     
-    init(appColor: Color, label: PresentationThemeLabel) {
+    init(appColor: Color, label: PresentationThemeLabel, colors: PresentationThemeColors) {
         self.label = label
         self.appColor = appColor
+        self.colors = colors
     }
     
     static var darkMode: PresentationTheme {
         PresentationTheme(
             appColor: Color(red: 33/255, green: 150/255, blue: 243/255),
-            label: .darkMode
+            label: .darkMode,
+            colors: .darkMode
         )
     }
     
     static var lightMode: PresentationTheme {
         PresentationTheme(
             appColor: Color(red: 51/255, green: 102/255, blue: 153/255),
-            label: .lightMode
+            label: .lightMode,
+            colors: .lightMode
         )
     }
 }
@@ -72,6 +76,23 @@ struct PresentationThemeLabel: Equatable {
             secondary: Color(red: 58/242, green: 58/242, blue: 60/247),
             tertiary: Color(red: 142/242, green: 142/242, blue: 147/247)
         )
+    }
+}
+
+struct PresentationThemeColors: Equatable {
+    
+    let white: Color
+    
+    init(white: Color) {
+        self.white = white
+    }
+    
+    static var darkMode: PresentationThemeColors {
+        PresentationThemeColors(white: Color.white)
+    }
+    
+    static var lightMode: PresentationThemeColors {
+        PresentationThemeColors(white: Color.white)
     }
 }
 
